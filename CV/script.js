@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const reveals = document.querySelectorAll(".reveal-on-scroll");
+    const reveals = document.querySelectorAll(".reveal-on-scroll, .reveal-from-right");
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
         const elementVisible = 80;

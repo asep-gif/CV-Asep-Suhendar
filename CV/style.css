@@ -201,6 +201,17 @@ body {
     transform: translateY(0);
 }
 
+.reveal-from-right {
+    opacity: 0;
+    transform: translateX(50px); /* Start from the right */
+    transition: all 0.8s ease-out;
+}
+
+.reveal-from-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .job-card {
     margin-bottom: 30px;
     padding: 25px;
