@@ -1,173 +1,622 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive CV - Asep Suhendar</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Menghubungkan ke file CSS terpisah -->
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asep Suhendar — Hotel Operations &amp; Finance Executive</title>
+<meta name="description" content="26 years in hospitality, from F&B waiter to corporate executive across 21 hotels. Seeking Hotel Manager / General Manager appointment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10233A;
+  --ink-2:#1D3A5C;
+  --brass:#B0894A;
+  --brass-soft:#E8DCC6;
+  --paper:#FBFAF8;
+  --panel:#EDEFF2;
+  --line:#D6D9DE;
+  --slate:#4B5768;
+  --slate-2:#6E7A8A;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--slate);
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+
+/* ---------- HERO ---------- */
+.hero{background:var(--ink);color:#fff;padding:56px 0 0;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:4px;background:var(--brass)}
+.hero-top{display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap}
+.portrait{
+  width:138px;height:172px;flex:none;position:relative;
+  background:var(--ink-2);overflow:hidden;
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:-6px 6px 0 0 var(--brass);
+}
+.portrait img{
+  width:100%;height:100%;object-fit:cover;object-position:center 22%;
+  display:block;position:relative;z-index:1;filter:saturate(.92) contrast(1.03);
+}
+.portrait .initials{
+  position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:600;font-size:2.6rem;color:var(--brass);
+  letter-spacing:.04em;
+}
+.portrait.no-photo .initials{display:flex}
+.hero-id{flex:1 1 380px;min-width:280px}
+h1{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(2.6rem,6.4vw,4.1rem);line-height:1.02;
+  letter-spacing:-.018em;color:#fff;
+}
+.role{
+  font-family:var(--serif);font-weight:400;font-style:italic;
+  font-size:clamp(1.05rem,2.2vw,1.35rem);
+  color:var(--brass-soft);margin-top:10px;line-height:1.35;
+}
+.contact{
+  margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 22px;
+  font-size:.86rem;color:#B9C5D4;
+}
+.contact a{color:#B9C5D4;text-decoration:none;border-bottom:1px solid rgba(185,197,212,.35);padding-bottom:1px}
+.contact a:hover,.contact a:focus-visible{color:#fff;border-bottom-color:var(--brass)}
+
+/* stat row */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  margin-top:40px;border-top:1px solid rgba(255,255,255,.16);
+}
+.stat{padding:20px 20px 22px;border-right:1px solid rgba(255,255,255,.16)}
+.stat:first-child{padding-left:0}
+.stat:last-child{border-right:0}
+.stat b{
+  display:block;font-family:var(--serif);font-weight:600;
+  font-size:1.9rem;color:#fff;line-height:1.1;letter-spacing:-.01em;
+}
+.stat span{display:block;font-size:.78rem;color:#93A4B8;margin-top:4px;line-height:1.4}
+
+/* ---------- STAIRCASE ---------- */
+.climb{background:var(--ink);padding:6px 0 60px}
+.climb h2{
+  font-family:var(--serif);font-weight:600;font-size:1.4rem;color:#fff;
+  margin-bottom:6px;
+}
+.climb p.lede{color:#93A4B8;font-size:.92rem;max-width:60ch;margin-bottom:30px}
+.steps{display:flex;align-items:flex-end;gap:6px;min-height:250px}
+.step{
+  flex:1;display:flex;flex-direction:column;justify-content:flex-end;
+  border-bottom:2px solid var(--brass);
+}
+.step .riser{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-bottom:0;
+  padding:12px 12px 14px;
+  display:flex;flex-direction:column;justify-content:flex-end;height:100%;
+}
+.step.peak .riser{background:rgba(176,137,74,.20);border-color:var(--brass)}
+.step .yr{
+  font-family:var(--sans);font-weight:700;font-size:.72rem;letter-spacing:.06em;
+  color:var(--brass);margin-bottom:6px;
+}
+.step .job{color:#fff;font-size:.86rem;font-weight:600;line-height:1.32}
+.step .where{color:#8FA0B4;font-size:.75rem;margin-top:4px;line-height:1.35}
+.step .flag{
+  display:inline-block;margin-top:8px;font-size:.68rem;font-weight:700;
+  letter-spacing:.05em;color:var(--ink);background:var(--brass);
+  padding:2px 7px;border-radius:2px;
+}
+
+/* ---------- BODY GRID ---------- */
+.main{display:grid;grid-template-columns:1fr 292px;gap:56px;padding:56px 0 72px;align-items:start}
+section{margin-bottom:44px}
+section:last-child{margin-bottom:0}
+h2.sec{
+  font-family:var(--serif);font-weight:600;font-size:1.5rem;color:var(--ink);
+  letter-spacing:-.012em;padding-bottom:9px;border-bottom:2px solid var(--ink);
+  margin-bottom:20px;
+}
+.profile p{margin-bottom:14px;max-width:74ch}
+.profile p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+
+/* jobs */
+.job-block{padding:22px 0;border-bottom:1px solid var(--line)}
+.job-block:last-child{border-bottom:0}
+.job-head{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:baseline}
+.job-title{font-family:var(--serif);font-size:1.14rem;font-weight:600;color:var(--ink);line-height:1.3}
+.job-org{color:var(--brass);font-weight:600;font-size:.92rem;margin-top:3px}
+.job-when{font-size:.82rem;color:var(--slate-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.job-meta{font-size:.8rem;color:var(--slate-2);margin-top:6px}
+ul.pts{list-style:none;margin-top:13px}
+ul.pts li{position:relative;padding-left:19px;margin-bottom:8px;font-size:.93rem;max-width:74ch}
+ul.pts li::before{
+  content:"";position:absolute;left:0;top:.62em;
+  width:7px;height:1px;background:var(--brass);
+}
+ul.pts li:last-child{margin-bottom:0}
+
+/* GM callout */
+.gm{
+  margin-top:18px;background:var(--panel);border-left:3px solid var(--brass);
+  padding:18px 20px;
+}
+.gm h4{font-family:var(--serif);font-size:1.02rem;color:var(--ink);font-weight:600;margin-bottom:3px}
+.gm .when{font-size:.79rem;color:var(--slate-2);margin-bottom:10px}
+.gm p{font-size:.91rem;max-width:70ch}
+.gm ul.pts{margin-top:10px}
+.gm ul.pts li{font-size:.89rem}
+
+/* systems */
+.sys{padding:20px 0;border-bottom:1px solid var(--line)}
+.sys:last-child{border-bottom:0}
+.sys h3{font-family:var(--serif);font-size:1.08rem;color:var(--ink);font-weight:600}
+.sys .who{font-size:.79rem;color:var(--slate-2);margin:3px 0 10px}
+.sys .who a{color:var(--brass);text-decoration:none;font-weight:600}
+.sys .who a:hover,.sys .who a:focus-visible{text-decoration:underline}
+.sys p{font-size:.92rem;max-width:72ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-size:.74rem;color:var(--ink);background:var(--panel);padding:3px 9px;border-radius:2px;font-weight:500}
+
+/* ---------- RAIL ---------- */
+.rail{position:sticky;top:26px;font-size:.88rem}
+.card{border-top:2px solid var(--ink);padding:16px 0 22px}
+.card h3{
+  font-family:var(--serif);font-size:1.02rem;color:var(--ink);font-weight:600;margin-bottom:11px;
+}
+.card dl div{margin-bottom:11px}
+.card dl div:last-child{margin-bottom:0}
+.card dt{color:var(--ink);font-weight:600;font-size:.84rem}
+.card dd{color:var(--slate);font-size:.84rem;line-height:1.5;margin-top:2px}
+.card ul{list-style:none}
+.card ul li{margin-bottom:9px;line-height:1.45;font-size:.84rem}
+.card ul li:last-child{margin-bottom:0}
+.card ul li b{color:var(--ink);font-weight:600;display:block}
+.card ul li span{color:var(--slate-2);font-size:.79rem}
+.note{font-size:.78rem;color:var(--slate-2);font-style:italic;line-height:1.5;margin-top:7px}
+
+/* actions */
+.actions{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap}
+.btn{
+  font-family:var(--sans);font-size:.85rem;font-weight:600;
+  padding:10px 17px;border-radius:2px;cursor:pointer;text-decoration:none;
+  display:inline-block;border:1px solid var(--ink);transition:background .15s,color .15s;
+}
+.btn-solid{background:var(--ink);color:#fff}
+.btn-solid:hover,.btn-solid:focus-visible{background:var(--ink-2)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--panel)}
+
+footer{background:var(--ink);color:#8FA0B4;padding:26px 0;font-size:.8rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:960px){
+  .main{grid-template-columns:1fr;gap:34px}
+  .rail{position:static}
+  .steps{flex-direction:column;align-items:stretch;gap:0;min-height:0}
+  .step{border-bottom:0;border-left:2px solid var(--brass)}
+  .step .riser{border:1px solid rgba(255,255,255,.14);border-left:0;border-bottom:0;height:auto;padding:13px 14px}
+  .step:last-child .riser{border-bottom:1px solid rgba(255,255,255,.14)}
+}
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .hero-top{gap:22px}
+  .portrait{width:96px;height:120px;box-shadow:-4px 4px 0 0 var(--brass)}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{padding:15px 14px;border-bottom:1px solid rgba(255,255,255,.16)}
+  .stat:first-child,.stat:nth-child(3){padding-left:0}
+  .stat:nth-child(2n){border-right:0}
+  .job-when{white-space:normal}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+}
+
+/* ---------- PRINT ---------- */
+@media print{
+  body{background:#fff;font-size:10.4pt;line-height:1.44}
+  .wrap{max-width:100%;padding:0}
+  .actions,footer,.climb p.lede{display:none}
+  .hero{background:#fff;color:var(--ink);padding:0 0 10pt}
+  .hero::after{display:none}
+  .portrait{
+    width:86pt;height:107pt;box-shadow:none;border:.5pt solid var(--line);
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  }
+  .portrait img{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h1{color:var(--ink);font-size:26pt}
+  .role{color:var(--slate)}
+  .contact,.contact a{color:var(--slate)}
+  .stats{border-color:var(--line)}
+  .stat{border-color:var(--line);padding:8pt 10pt}
+  .stat b{color:var(--ink);font-size:15pt}
+  .stat span{color:var(--slate-2)}
+  .climb{background:#fff;padding:10pt 0}
+  .climb h2{color:var(--ink)}
+  .steps{min-height:0;flex-direction:row}
+  .step .riser{background:#fff;border-color:var(--line)}
+  .step.peak .riser{background:#F2ECDF}
+  .step .job{color:var(--ink)}
+  .step .where{color:var(--slate-2)}
+  .main{display:block;padding:10pt 0 0}
+  .rail{position:static;margin-top:14pt;font-size:9.4pt}
+  .job-block,.sys,section,.card{break-inside:avoid;page-break-inside:avoid}
+  h2.sec{font-size:13pt}
+}
+</style>
 </head>
 <body>
 
-    <div class="cv-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <img src="logo/profile.png" alt="Profile Photo" class="profile-img">
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <a href="https://wa.me/6285121003580" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">+62851 2100 3580</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:asep3580@gmail.com" style="color: white; text-decoration: none;">asep3580@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <a href="https://maps.app.goo.gl/iixJxALNTwiBRtND8" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">Bandung, West Java</a>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fas fa-globe"></i>
-                    <a href="https://www.accuransi.com" target="_blank" style="color: white; text-decoration: none;">accuransi.com</a>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fas fa-globe"></i>
-                    <a href="https://www.xenoshms.com" target="_blank" style="color: white; text-decoration: none;">xenoshms.com</a>
-                </div>
-
-            </div>
-
-            <h2>Skills & Endorsements</h2>
-            <ul class="sidebar-list">
-                <li>
-                    <i class="fas fa-shield-alt skill-icon"></i><strong>Audit & Fraud Prevention</strong>
-                    <small>Investigation, SOP, Loss Prevention</small>
-                </li>
-                <li>
-                    <i class="fas fa-chart-line skill-icon"></i><strong>Financial Control</strong>
-                    <small>Closing, P&L, Budgeting, Cashflow</small>
-                </li>
-                <li>
-                    <i class="fas fa-file-invoice-dollar skill-icon"></i><strong>Taxation Expert</strong>
-                    <small>Corporate Tax, WHT, VAT, Tax Audit</small>
-                </li>
-                <li>
-                    <i class="fas fa-code skill-icon"></i><strong>Tech Development</strong>
-                    <small>SQL, Database, App Dev, PMS Logic</small>
-                </li>
-            </ul>
-
-            <h2>Familiar PMS</h2>
-            <ul class="sidebar-list">
-                <li><i class="fas fa-cogs" style="width: 20px; text-align: center; margin-right: 8px;"></i>VHP Sindata</li>
-                <li><i class="fas fa-concierge-bell" style="width: 20px; text-align: center; margin-right: 8px;"></i>GuestPro</li>
-                <li><i class="fas fa-bolt" style="width: 20px; text-align: center; margin-right: 8px;"></i>PowerPro</li>
-                <li><i class="fas fa-calculator" style="width: 20px; text-align: center; margin-right: 8px;"></i>Accurate</li>
-            </ul>
-
-            <h2>Education</h2>
-            <ul class="sidebar-list">
-                <li>
-                    <strong>D3 Teknik Informatika</strong>
-                    Universitas Gunadarma
-                </li>
-                <li>
-                    <strong>Certifications</strong>
-                    Tax Brevet A & B
-                </li>
-            </ul>
-
-            <h2><i class="fas fa-hotel" style="margin-right: 10px; font-size: 1rem; vertical-align: middle;"></i>Hotel Experience</h2>
-            <ul class="sidebar-list">
-                <li>Seraton Media Jakarta</li>
-                <li>Neo Mangga Dua Jakarta</li>
-                <li>Puri Denpasar Jakarta</li>
-                <li>Treva International Jakarta</li>
-            </ul>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="header-name">
-                <h1>Asep Suhendar</h1>
-                <p>Corporate Head of Accounting | Financial Strategist | Tech Innovator</p>
-            </div>
-
-            <!-- About Section -->
-            <section class="section">
-                <h3 class="section-title reveal-from-right">About</h3>
-                <p class="reveal-from-right">
-                    I am a Corporate Head of Accounting with a passion for integrating financial integrity with technological innovation. Currently managing finances for KAGUM Hotels, I specialize in internal audit, tax compliance, and fraud prevention. 
-                </p>
-                <p class="reveal-from-right" style="margin-top: 1rem;">
-                    Unlike traditional accountants, I build my own tools—including the "Smart Data" app and a custom PMS—to automate audits and secure revenue. My goal is to bring this unique blend of financial stewardship and tech-savviness to drive efficiency and profitability.
-                </p>
-            </section>
-
-            <!-- Featured Projects -->
-            <section class="section reveal-on-scroll" style="margin-top: 35px;">
-                <h3 class="section-title">Featured Projects</h3>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <i class="fas fa-database" style="color:var(--linkedin-blue); margin-bottom:10px;"></i>
-                        <h4>"Smart Data" App</h4>
-                        <p style="font-size:0.9rem; color:#555;">Founder & Developer. An automated tool for real-time financial anomaly analysis and internal audit.</p>
-                    </div>
-                    <div class="project-card">
-                        <i class="fas fa-hotel" style="color:var(--linkedin-blue); margin-bottom:10px;"></i>
-                        <h4>Custom Hotel PMS</h4>
-                        <p style="font-size:0.9rem; color:#555;">Developer. Building an independent Property Management System to streamline Front & Back Office operations.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experience Section -->
-            <section class="section" style="margin-top: 35px;">
-                <h3 class="section-title reveal-on-scroll">Experience</h3>
-                
-                <div class="job-card reveal-on-scroll">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Corporate Head of Accounting</div>
-                            <div class="company-name"><a href="https://kagum-hotel.com/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">KAGUM HOTELS</a></div>
-                        </div>
-                        <div class="job-date">2019 – Present</div>
-                    </div>
-                    <ul class="achievement-list">
-                        <li><strong>Strategic Leadership:</strong> Manage monthly closing, internal audit, and tax compliance for all managed hotel units.</li>
-                        <li><strong>Fraud Prevention:</strong> Successfully detected and cleaned up internal fraud cases. Established strict SOPs for revenue centers (Sales, FO, F&B).</li>
-                        <li><strong>Tax Head:</strong> Oversee all Corporate Tax and VAT obligations, ensuring zero-penalty compliance.</li>
-                        <li><strong>Training:</strong> Act as Master Trainer for accounting departments across the group.</li>
-                    </ul>
-                </div>
-
-                <!-- Placeholder Previous Job -->
-                <div class="job-card reveal-on-scroll">
-                    <div class="job-header">
-                        <div>
-                            <div class="job-title">Corporate Head of Accounting</div>
-                            <div class="company-name">Verse Hotels</div>
-                        </div>
-                        <div class="job-date">2017 – 2019</div>
-                    </div>
-                    <ul class="achievement-list">
-                        <li>Managed financial reporting and daily accounting operations.</li>
-                        <li>Assisted in annual budgeting and external audit preparation.</li>
-                    </ul>
-                </div>
-            </section>
-        </main>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <figure class="portrait">
+        <img src="https://cv-asep-suhendar.vercel.app/logo/profile.png" alt="Asep Suhendar"
+             onerror="this.closest('.portrait').classList.add('no-photo');this.remove()">
+        <span class="initials" aria-hidden="true">AS</span>
+      </figure>
+      <div class="hero-id">
+        <h1>Asep Suhendar</h1>
+        <p class="role">Hotel operations and finance executive — twenty-six years in hospitality, from the restaurant floor to the corporate office</p>
+        <div class="contact">
+          <span>Bandung, West Java</span>
+          <a href="https://wa.me/6285121003580">+62 851 2100 3580</a>
+          <a href="mailto:asep3580@gmail.com">asep3580@gmail.com</a>
+        </div>
+      </div>
     </div>
 
-    <button onclick="window.print()" class="print-btn">
-        <i class="fas fa-file-pdf"></i> Save as PDF
-    </button>
+    <div class="stats">
+      <div class="stat"><b>26</b><span>Years in hotels, without leaving the industry</span></div>
+      <div class="stat"><b>21</b><span>Properties under corporate oversight today</span></div>
+      <div class="stat"><b>63</b><span>Finance and audit staff developed</span></div>
+      <div class="stat"><b>116</b><span>Rooms commanded as officer-in-charge GM</span></div>
+    </div>
+  </div>
+</header>
 
-    <!-- Menghubungkan ke file JS terpisah -->
-    <script src="script.js"></script>
+<div class="climb">
+  <div class="wrap">
+    <h2>The climb</h2>
+    <p class="lede">Every position below is inside a hotel. Nothing here was skipped.</p>
+    <div class="steps">
+
+      <div class="step" style="height:36%">
+        <div class="riser">
+          <div class="yr">2000</div>
+          <div class="job">Waiter, F&amp;B Service</div>
+          <div class="where">Hotel Treva International, Jakarta</div>
+        </div>
+      </div>
+
+      <div class="step" style="height:47%">
+        <div class="riser">
+          <div class="yr">2001 – 2009</div>
+          <div class="job">F&amp;B Cashier → Front Desk → Night Audit → Income Audit</div>
+          <div class="where">Hotel Treva International, Jakarta</div>
+        </div>
+      </div>
+
+      <div class="step" style="height:55%">
+        <div class="riser">
+          <div class="yr">2009 – 2010</div>
+          <div class="job">Retail operator, own P&amp;L</div>
+          <div class="where">Mini market, independent venture</div>
+        </div>
+      </div>
+
+      <div class="step" style="height:65%">
+        <div class="riser">
+          <div class="yr">2010 – 2014</div>
+          <div class="job">Night Audit → Income Audit → AR → Credit Manager</div>
+          <div class="where">Puri Denpasar Hotel, Jakarta</div>
+        </div>
+      </div>
+
+      <div class="step" style="height:76%">
+        <div class="riser">
+          <div class="yr">2014 – 2017</div>
+          <div class="job">Chief Accounting</div>
+          <div class="where">Neo Mangga Dua · Green Bamboo · Gino Feruci · The Media Hotel &amp; Towers</div>
+        </div>
+      </div>
+
+      <div class="step peak" style="height:89%">
+        <div class="riser">
+          <div class="yr">2017 – 2019</div>
+          <div class="job">Corporate Financial Controller</div>
+          <div class="where">Verse Hotels, 4 properties</div>
+          <span class="flag">GM in charge, Cirebon</span>
+        </div>
+      </div>
+
+      <div class="step" style="height:100%">
+        <div class="riser">
+          <div class="yr">2019 – now</div>
+          <div class="job">Corporate Head of Accounting</div>
+          <div class="where">KAGUM Hotels, 21 properties</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="main">
+
+    <div class="content">
+
+      <div class="actions">
+        <a class="btn btn-solid" href="#" onclick="window.print();return false;">Save as PDF</a>
+        <a class="btn btn-ghost" href="mailto:asep3580@gmail.com">Get in touch</a>
+      </div>
+
+      <section class="profile">
+        <h2 class="sec">Profile</h2>
+        <p>I started as a waiter in a Jakarta hotel restaurant in September 2000 and have not worked outside hospitality since. Over twenty-six years I have held nearly every revenue and control position a hotel has — restaurant floor, F&amp;B cashier, front desk, night audit, income audit, receivable, credit — and I now read the profit and loss statement those positions produce, across twenty-one properties.</p>
+        <p>Today I direct financial control, budgeting and internal audit for the KAGUM Hotels portfolio and lead sixty-three finance staff. In late 2018 I was placed in charge of Verse Hotel Cirebon, a 116-room three-star property, running it as officer-in-charge General Manager. I also build the systems I work with: <strong>KAGUM SmartData</strong>, the group's live commercial dashboard, and <strong>XenosHMS</strong>, a cloud property management system now deployed in operating hotels.</p>
+        <p>I am looking for a Hotel Manager or General Manager appointment where operational discipline, commercial analytics and genuine credibility with line staff turn into gross operating profit.</p>
+      </section>
+
+      <section>
+        <h2 class="sec">Experience</h2>
+
+        <article class="job-block">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Corporate Head of Accounting</div>
+              <div class="job-org">KAGUM Hotels</div>
+            </div>
+            <div class="job-when">Jan 2019 — present</div>
+          </div>
+          <div class="job-meta">Bandung · 21 properties · 63 staff · consolidated revenue above Rp 10.6 billion per month</div>
+          <ul class="pts">
+            <li>Own the monthly close, consolidated profit and loss and balance sheet for twenty-one hotels, delivered on deadline every cycle.</li>
+            <li>Designed, coded and deployed KAGUM SmartData — the platform management now uses to watch ARR, RevPAR, occupancy against budget, daily revenue trend, receivable and payable ageing, and market segment mix across every unit.</li>
+            <li>Run the annual budget cycle end to end: room production forecasting, revenue streaming, budget comparison and the corporate business plan presentation.</li>
+            <li>Established and enforce standard operating procedures across revenue centres — front office, food and beverage, sales. Detected, investigated and closed internal fraud cases.<!-- ISI ANGKA: tambahkan nilai kebocoran yang berhasil ditutup, mis. "recovering Rp ___ million annually" --></li>
+            <li>Accountable for corporate income tax, PB1, VAT and withholding across all managed units, with a clean record and no penalties.</li>
+            <li>Lead the group training centre for accounting, onboarding and certifying new finance staff at every property.</li>
+          </ul>
+        </article>
+
+        <article class="job-block">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Corporate Financial Controller</div>
+              <div class="job-org">Verse Hotels</div>
+            </div>
+            <div class="job-when">Jun 2017 — Jan 2019</div>
+          </div>
+          <div class="job-meta">Jakarta · 4 properties · reporting to the Corporate General Manager</div>
+          <ul class="pts">
+            <li>Directed financial reporting, budgeting and external audit preparation across four hotels.</li>
+            <li>Standardised accounting procedure and month-end close discipline throughout the group.</li>
+          </ul>
+
+          <div class="gm">
+            <h4>General Manager, officer-in-charge — Verse Hotel Cirebon</h4>
+            <div class="when">November – December 2018 · 116 rooms · three-star · restaurant, four function rooms</div>
+            <p>Appointed by corporate to take full operational command of the property while continuing to carry the corporate controller mandate.</p>
+            <ul class="pts">
+              <li>Held final authority over daily operations across front office, housekeeping, food and beverage, sales and engineering.</li>
+              <li>Chaired the daily morning briefing and owned rate, allotment and expenditure approvals for the property.</li>
+              <li>Handled guest escalations and staff decisions directly as senior authority on site.</li>
+              <!-- ISI ANGKA: tambahkan 1 bullet hasil konkret — occupancy/ARR selama 2 bulan, penghematan biaya, atau keputusan penting yang diambil -->
+            </ul>
+          </div>
+        </article>
+
+        <article class="job-block">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Chief Accountant</div>
+              <div class="job-org">The Media Hotel &amp; Towers, Jakarta</div>
+            </div>
+            <div class="job-when">Oct 2016 — Jun 2017</div>
+          </div>
+          <div class="job-meta">A&amp;G Controller Department</div>
+          <ul class="pts">
+            <li>Managed full-cycle property accounting, monthly closing and statutory reporting for a full-service city hotel.</li>
+          </ul>
+        </article>
+
+        <article class="job-block">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Chief Accounting</div>
+              <div class="job-org">Gino Feruci Kebon Jati, Bandung</div>
+            </div>
+            <div class="job-when">Nov 2015 — Nov 2016</div>
+          </div>
+          <ul class="pts">
+            <li>Ran the property finance function: daily income audit oversight, cost control, payables, receivables and month-end close.</li>
+          </ul>
+        </article>
+
+        <article class="job-block">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Chief Accounting</div>
+              <div class="job-org">Green Bamboo Residence, Jakarta</div>
+            </div>
+            <div class="job-when">Mar 2015 — Nov 2015</div>
+          </div>
+          <ul class="pts">
+            <li>Directed accounting operations and financial reporting for a serviced residence.</li>
+          </ul>
+        </article>
+
+        <article class="job-block">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Chief Accounting</div>
+              <div class="job-org">Hotel Neo Mangga Dua, Jakarta</div>
+            </div>
+            <div class="job-when">Jan 2014 — Mar 2015</div>
+          </div>
+          <ul class="pts">
+            <li>Established month-end close discipline and revenue control routines for a business hotel.</li>
+          </ul>
+        </article>
+
+        <article class="job-block">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Night Audit → Income Audit → Accounts Receivable → Credit Manager</div>
+              <div class="job-org">Puri Denpasar Hotel, Jakarta</div>
+            </div>
+            <div class="job-when">Jan 2010 — Jan 2014</div>
+          </div>
+          <div class="job-meta">Four consecutive promotions in four years</div>
+          <ul class="pts">
+            <li><strong>Credit Manager.</strong> Owned the corporate and travel agent credit portfolio — credit assessment, limits, collection procedure and the property credit policy manual. Chaired credit meetings with sales and front office.</li>
+            <li><strong>Accounts Receivable.</strong> Managed city ledger, invoicing and ageing for corporate, government and travel agent accounts.</li>
+            <li><strong>Income Audit.</strong> Verified daily revenue across rooms, food and beverage and other outlets; reconciled rebates, allowances and paid-outs.</li>
+            <li><strong>Night Audit.</strong> Closed the hotel day, balanced the system and produced the daily revenue report for management.</li>
+          </ul>
+        </article>
+
+        <article class="job-block">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Retail business operator — mini market</div>
+              <div class="job-org">Independent venture</div>
+            </div>
+            <div class="job-when">Apr 2009 — Jan 2010</div>
+          </div>
+          <ul class="pts">
+            <li>Ran a retail outlet end to end — purchasing and supplier negotiation, stock control, pricing and margin, cashiering, staffing and the complete profit and loss statement. The first time I carried an entire unit's commercial result myself.</li>
+          </ul>
+        </article>
+
+        <article class="job-block">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Waiter → F&amp;B Cashier → Front Desk Agent → Night Audit → Income Audit</div>
+              <div class="job-org">Hotel Treva International, Jakarta</div>
+            </div>
+            <div class="job-when">Sep 2000 — Apr 2009</div>
+          </div>
+          <div class="job-meta">Eight and a half years · five positions · one property</div>
+          <ul class="pts">
+            <li><strong>Income Audit.</strong> Audited every revenue stream daily, reconciled outlet takings to the system and reported variances to the Financial Controller.</li>
+            <li><strong>Night Audit.</strong> Ran the nightly close, system rollover and flash report as the only management presence on property overnight.</li>
+            <li><strong>Front Desk Agent.</strong> Check-in and check-out, guest requests and complaints, cashiering and room allocation.</li>
+            <li><strong>F&amp;B Cashier.</strong> Outlet billing, settlement and shift reconciliation.</li>
+            <li><strong>Waiter.</strong> Restaurant and banquet service — where I learned what guests actually notice.</li>
+          </ul>
+        </article>
+
+      </section>
+
+      <section>
+        <h2 class="sec">Systems I built</h2>
+
+        <article class="sys">
+          <h3>KAGUM SmartData</h3>
+          <p class="who">Designer and developer · <a href="https://smartdata.kagumhotels.com">smartdata.kagumhotels.com</a></p>
+          <p>The live management platform for twenty-one hotels: financial dashboard, corporate and property performance slides, budget creation and comparison, room production input, revenue streaming, daily income, receivable and payable ageing, internal audit and training centre. It tracks ARR, RevPAR, occupancy actual against budget, daily revenue versus budget and prior year, and room production and ARR by market segment.</p>
+          <div class="tags"><span class="tag">ARR / RevPAR</span><span class="tag">Budget vs actual</span><span class="tag">Segment mix</span><span class="tag">AR &amp; AP ageing</span><span class="tag">Internal audit</span></div>
+        </article>
+
+        <article class="sys">
+          <h3>XenosHMS</h3>
+          <p class="who">Founder and architect · <a href="https://www.xenoshms.com">xenoshms.com</a></p>
+          <p>A cloud property management system covering front office, reservations, housekeeping, night audit, point of sale and integrated hotel accounting — designed out of twenty-six years of first-hand operational knowledge and running today in live properties.</p>
+          <div class="tags"><span class="tag">Front office</span><span class="tag">Night audit</span><span class="tag">Channel manager</span><span class="tag">Hotel accounting</span></div>
+        </article>
+
+        <article class="sys">
+          <h3>Hotel internal audit tool</h3>
+          <p class="who">Designer and developer</p>
+          <p>Weighted KPI scoring application across fourteen audit areas, used to benchmark operational compliance property by property.</p>
+        </article>
+      </section>
+
+    </div>
+
+    <aside class="rail">
+
+      <div class="card">
+        <h3>What I do</h3>
+        <dl>
+          <div><dt>Operations</dt><dd>Rooms division oversight, F&amp;B outlet control, SOP design and enforcement, service recovery, multi-property standardisation</dd></div>
+          <div><dt>Commercial</dt><dd>ARR, RevPAR and occupancy management, segment mix, OTA and travel agent channel economics, budgeting and forecasting</dd></div>
+          <div><dt>Financial control</dt><dd>Month-end close, P&amp;L and balance sheet, cash flow, cost control, credit management, capital and operating budgets</dd></div>
+          <div><dt>Audit and governance</dt><dd>Internal audit programmes, fraud detection and investigation, loss prevention, revenue centre controls</dd></div>
+          <div><dt>Taxation</dt><dd>Corporate income tax, PB1 and PBJT, VAT, PPh 23 withholding, tax audit management</dd></div>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h3>Systems I work in</h3>
+        <dl>
+          <div><dt>Property management</dt><dd>VHP Sindata, Power Pro, GuestPro</dd></div>
+          <div><dt>Accounting</dt><dd>Accurate, Microsoft Office</dd></div>
+          <div><dt>Development</dt><dd>SQL, database design, full-stack application development</dd></div>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h3>Certification</h3>
+        <ul>
+          <li><b>Effective Hotel Credit Management</b><span>PHRI Jakarta Chapter and Hotel Credit Managers Association, 2011</span></li>
+          <li><b>Tax Brevet A &amp; B</b><span>Indonesian taxation certification</span></li>
+          <li><b>Food &amp; Beverage Service</b><span>Hotel Treva International, 2000</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Education</h3>
+        <ul>
+          <li><b>Universitas Gunadarma</b><span>Informatics Engineering, Diploma III — studies undertaken, degree not completed</span></li>
+        </ul>
+        <p class="note">My competence has been built through twenty-six years of progressive in-industry experience and formal certification rather than a completed degree.</p>
+      </div>
+
+      <div class="card">
+        <h3>Languages</h3>
+        <ul>
+          <li><b>Bahasa Indonesia</b><span>Native</span></li>
+          <li><b>English</b><span>Professional working proficiency</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>References</h3>
+        <ul>
+          <li><b>Andreas Christanto</b><span>Former Corporate General Manager, Verse Hotels · +62 817 152 070</span></li>
+          <li><b>Dani Anwar</b><span>Former Corporate HR, Verse Hotels · +62 813 8238 1014</span></li>
+        </ul>
+        <p class="note">Written employment references available from Hotel Treva International, Puri Denpasar Hotel, The Media Hotel &amp; Towers and Verse Hotels.</p>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Asep Suhendar · Bandung, West Java</span>
+    <span>Available for Hotel Manager and General Manager appointments</span>
+  </div>
+</footer>
+
 </body>
 </html>
